@@ -1,11 +1,12 @@
 {
-  "name": "gatsby-blog-demo",
+  "name": "selva-verde-demo",
   "version": "1.0.0",
   "private": true,
-  "description": "Gatsby Blog Demo",
-  "author": "Stefano Verna",
+  "description": "Selva Verde Demo",
+  "author": "Ridha Watanabe",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "electronic-payment"
   ],
   "scripts": {
     "develop": "gatsby develop",
