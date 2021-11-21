@@ -18,5 +18,13 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: 'gatsby-plugin-snipcart',
+      options: {
+        apiKey: process.env.SNIPCART_TOKEN,
+        autopop: true
+      }
+    },
+    'gatsby-plugin-fontawesome-css',
   ],
 };

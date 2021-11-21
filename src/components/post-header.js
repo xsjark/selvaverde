@@ -1,25 +1,30 @@
 import React from "react";
-import Avatar from "../components/avatar";
 import Date from "../components/date";
 import CoverImage from "../components/cover-image";
 import PostTitle from "../components/post-title";
 
-export default function PostHeader({ title, coverImage, date, author }) {
+export default function PostHeader({ title, coverImage, date, price }) {
   return (
     <>
       <PostTitle>{title}</PostTitle>
       <div className="hidden md:block md:mb-12">
-        <Avatar name={author?.name} picture={author?.picture} />
+      <Date dateString={date} />
       </div>
       <div className="mb-8 md:mb-16 -mx-5 sm:mx-0">
         <CoverImage title={title} fluid={coverImage?.gatsbyImageData} />
       </div>
       <div className="max-w-2xl mx-auto">
-        <div className="block md:hidden mb-6">
-          <Avatar name={author?.name} picture={author?.picture} />
-        </div>
         <div className="mb-6 text-lg">
-          <Date dateString={date} />
+        <button class="snipcart-add-item"
+          data-item-id={title}
+          data-item-price={price}
+          data-item-url="/paintings/starry-night"
+          data-item-description={date}
+          data-item-image={coverImage?.gatsbyImageData}
+          data-item-name={title}
+          style={{textDecoration: "underline", opacity: 0.75}}>
+          Reserve your spot for ${price} 
+        </button>
         </div>
       </div>
     </>

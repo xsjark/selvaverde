@@ -11,6 +11,10 @@ import { HelmetDatoCms } from "gatsby-source-datocms";
 export default function Post({ data: { site, post, morePosts } }) {
   return (
     <Container>
+      <button class="snipcart-checkout pull-right" 
+  style={{float: "right", marginTop: -10, textDecoration: "underline", opacity: 0.75}}>
+    Checkout
+    </button>
       <HelmetDatoCms seo={post.seo} favicon={site.favicon} />
       <Header />
       <article>
@@ -19,6 +23,7 @@ export default function Post({ data: { site, post, morePosts } }) {
           coverImage={post.coverImage}
           date={post.date}
           author={post.author}
+          price={post.price}
         />
         <PostBody content={post.content} />
       </article>
@@ -52,6 +57,7 @@ export const query = graphql`
         }
       }
       date
+      price
       coverImage {
         gatsbyImageData(width: 1500)
       }

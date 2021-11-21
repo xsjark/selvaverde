@@ -12,6 +12,10 @@ export default function Index({ data: { allPosts, site, blog } }) {
 
   return (
     <Container>
+      <button class="snipcart-checkout pull-right" 
+  style={{float: "right", marginTop: -40, textDecoration: "underline", opacity: 0.75}}>
+    Checkout
+    </button>
       <HelmetDatoCms seo={blog.seo} favicon={site.favicon} />
       <Intro />
       {heroPost && (
@@ -44,6 +48,7 @@ export const query = graphql`
     allPosts: allDatoCmsPost(sort: { fields: date, order: DESC }, limit: 20) {
       nodes {
         title
+        price
         slug
         excerpt
         date
