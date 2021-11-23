@@ -35,7 +35,9 @@ export default function Post({ data: { site, post, morePosts } }) {
           coverImage={post.coverImage}
           date={post.date}
           author={post.author}
-          price={post.price}/>
+          price={post.price}
+          slug={post.slug}
+          />
       </article>
       <SectionSeparator />
       {morePosts.nodes.length > 0 && <MoreStories posts={morePosts.nodes} />}
