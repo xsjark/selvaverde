@@ -26,7 +26,7 @@ export default function PostBody({ content, title, coverImage, date, price, slug
         <button id={title} class="snipcart-add-item bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
           data-item-id={title}
           data-item-price={price}
-          data-item-url={"https://selvaverdetours.gatsbyjs.io/posts/" + slug}
+          data-item-url={"https://selvaverdetours.gatsbyjs.io/posts/" + slug + "/#"} 
           data-item-description={date}
           data-item-image={coverImage?.gatsbyImageData}
           data-item-name={title}
