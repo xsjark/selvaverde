@@ -23,10 +23,10 @@ export default function PostBody({ content, title, coverImage, date, price, slug
       </div>
       <div className="max-w-2xl mx-auto flex justify-center">
         <div className="mb-6 text-lg">
-        <button id={JSON.stringify(title)} class="snipcart-add-item bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+        <button id={title} class="snipcart-add-item bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
           data-item-id={title}
           data-item-price={JSON.stringify(price)}
-          data-item-url={"/posts/" + slug + "#!/"}
+          data-item-url={"/posts/" + slug}
           data-item-description={date}
           data-item-image={coverImage?.gatsbyImageData}
           data-item-name={title}
