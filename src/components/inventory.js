@@ -13,7 +13,7 @@ useEffect(() => {
             }})
 
         const posts = await response.json();
-        setData(posts);
+        setData(JSON.stringify(posts));
     }
 
     loadData();
