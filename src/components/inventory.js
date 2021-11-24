@@ -1,19 +1,22 @@
 import React, { useState, useEffect }  from 'react'
 
-function Inventory() {
+function Inventory({id}) {
     
 
-const [data, setData] = useState(null);
+    const [stock, setStock] = useState(0);
+    const [sales, setSales] = useState(0);
+
 useEffect(() => {
     async function loadData() {
-        const response = await fetch('https://app.snipcart.com/api/orders', {
+        const response = await fetch('https://app.snipcart.com/api/products/'+id, {
             headers: {
-                'Authorization': `Basic ${btoa('Mjk4NmY4YTQtYzEyNi00MDc1LWEyZDEtMWU3YjIzNzUyMzQ2NjM3NzMyNzQ0NDM4MzA4Mjk3')}`,
+                'Authorization': `Basic ${btoa('ST_NjE4OTlmODgtZmVhNy00NjAwLWE0MzAtZWI4NzRiZjhjYmEwNjM3NzMzNzMyMjcyMDkxMjQx')}`,
                 'Accept': 'application/json'
             }})
 
         const posts = await response.json();
-        setData(JSON.stringify(posts));
+        setStock(JSON.stringify(posts.stock));
+        setSales(JSON.stringify(posts.statistics.numberOfSales));
     }
 
     loadData();
@@ -21,7 +24,7 @@ useEffect(() => {
 
     return (
         <div>
-            <p>{data}</p>
+            <p>{stock-sales} spots left</p>
         </div>
     )
 }
