@@ -1,9 +1,11 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { StructuredText } from "react-datocms";
+import Inventory from "../components/inventory";
 
 export default function PostBody({ content, title, coverImage, date, price, slug }) {
-  return (
+  
+    return (
     <div className="max-w-2xl mx-auto">
       <div className="prose prose-lg prose-blue">
         <StructuredText
@@ -21,6 +23,8 @@ export default function PostBody({ content, title, coverImage, date, price, slug
           }}
         />
       </div>
+      <div>
+      </div>
       <div className="max-w-2xl mx-auto flex justify-center">
         <div className="mb-6 text-lg">
         <button class="snipcart-add-item bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
@@ -30,9 +34,11 @@ export default function PostBody({ content, title, coverImage, date, price, slug
           data-item-description={date}
           data-item-image={coverImage?.gatsbyImageData}
           data-item-name={title}
-          style={{marginTop: 70}}>
+          style={{marginTop: 70}}
+        >
           Reserve your spot for ${price} 
         </button>
+        <Inventory />
         </div>
       </div>
     </div>

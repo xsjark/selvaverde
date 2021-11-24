@@ -10,7 +10,9 @@ import { HelmetDatoCms } from "gatsby-source-datocms";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons'
 
+
 export default function Post({ data: { site, post, morePosts } }) {
+  
   return (
     <Container>
       <div class="snipcart-summary"style={{float: "right", marginTop: -10}}>
@@ -22,7 +24,7 @@ export default function Post({ data: { site, post, morePosts } }) {
       </button>
     </div>
       <HelmetDatoCms seo={post.seo} favicon={site.favicon} />
-      <Header />
+      <Header> </Header>
       <article>
         <PostHeader
           title={post.title}
