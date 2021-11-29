@@ -49,12 +49,12 @@ const MyCalendar = props => {
 
   const add_date = async ({start,end,resourceId}) => {
     var persons = reformatPersons(data.allCalendarEvent.edges);
-
+    
     // Find if the array contains an object by comparing the property value
     if (persons.some(e => e.startDate.toISOString() == start.toISOString())) {
         alert("Sorry, we're booked out on this day.");
     } 
-    else if ( new Date().toISOString() >= start.toISOString()){
+    else if ( new Date(new Date().setDate(new Date().getDate()+1)).toISOString() >= start.toISOString()){
       alert("You can't book something in past.");
     }
     else
@@ -79,7 +79,7 @@ const MyCalendar = props => {
     />
     
       {
-        date !==  null && 
+        date !==  null ?
         <div className="max-w-2xl mx-auto flex justify-center">
         <div className="mb-6 text-lg">
         <button class="snipcart-add-item bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
@@ -93,6 +93,22 @@ const MyCalendar = props => {
           style={{marginTop: 70}}
         >
           Reserve your spot for ${props.price} on {date}
+        </button>
+        </div>
+      </div>
+      : date ==  null && 
+        <div className="max-w-2xl mx-auto flex justify-center">
+        <div className="mb-6 text-lg">
+        <button disabled class=" disabled:opacity-50 snipcart-add-item bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+          data-item-id={props.id}
+          data-item-price={props.price}
+          data-item-description={date}
+          data-item-image={props.coverImage?.gatsbyImageData}
+          data-item-name={props.id}
+          data-item-min-quantity={2}
+          style={{marginTop: 70}}
+        >
+          Select a date for your tour
         </button>
         </div>
       </div>
