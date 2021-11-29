@@ -25,5 +25,18 @@ module.exports = {
       }
     },
     'gatsby-plugin-fontawesome-css',
+    {
+      resolve: `gatsby-source-google-calendar`,
+      options: {
+        // options to retrieve the next 10 upcoming events
+        timeMin: (new Date()).toISOString(),
+        maxResults: 10,
+        singleEvents: true,
+        orderBy: 'startTime',
+        calendarIds: [
+          '783oo0gr304hacppllb16jsh38@group.calendar.google.com',
+        ],
+      }
+    },
   ],
 };

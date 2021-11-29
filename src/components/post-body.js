@@ -1,6 +1,7 @@
 import React, { useState, useEffect }  from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { StructuredText } from "react-datocms";
+import MyCalendar from "../components/calendar";
 
 export default function PostBody({ content, title, coverImage, date, price, slug }) {
   const [stock, setStock] = useState(0);
@@ -41,22 +42,13 @@ useEffect(() => {
       </div>
       <div>
       </div>
-      <div className="max-w-2xl mx-auto flex justify-center">
-        <div className="mb-6 text-lg">
-        <button class="snipcart-add-item bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-          data-item-id={title}
-          data-item-price={price}
-          data-item-url={"https://selvaverdetours.gatsbyjs.io/posts/" + slug + "/#"} 
-          data-item-description={date}
-          data-item-image={coverImage?.gatsbyImageData}
-          data-item-name={title}
-          data-item-min-quantity={sales==0 ? 2 : 1}
-          style={{marginTop: 70}}
-        >
-          Reserve your spot for ${price} ({stock-sales} remaining)
-        </button>
-        </div>
-      </div>
+      <MyCalendar 
+        id={title}
+        price={price}  
+        url={"https://selvaverdetours.gatsbyjs.io/posts/" + slug + "/#"} 
+        quantity={2}
+        slug={slug}
+      />
     </div>
   );
 }
