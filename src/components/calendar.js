@@ -92,7 +92,7 @@ const MyCalendar = props => {
           data-item-min-quantity={2}
           style={{marginTop: 70}}
         >
-          Reserve your spot for ${props.price} on {date}
+          Reserve your spot for ${props.price} on {new Date(date).toDateString()}
         </button>
         </div>
       </div>

@@ -23,9 +23,9 @@ export default function PostPreview({
         </Link>
       </h3>
       <div className="text-lg mb-4">
-        <Date dateString={date} />
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+      <p className="text-lg leading-relaxed mb-4 inline font-bold"> Description: </p>
+      <p className="text-lg leading-relaxed mb-4 inline">{excerpt}</p>
     </div>
   );
 }
