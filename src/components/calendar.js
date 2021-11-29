@@ -77,9 +77,9 @@ const MyCalendar = props => {
       selectable={true}
       drilldownView={false}
     />
-
+    
       {
-        date ==  null && 
+        date !==  null && 
         <div className="max-w-2xl mx-auto flex justify-center">
         <div className="mb-6 text-lg">
         <button class="snipcart-add-item bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
