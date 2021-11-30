@@ -24,7 +24,15 @@ export default function Post({ data: { site, post, morePosts } }) {
       </button>
     </div>
       <HelmetDatoCms seo={post.seo} favicon={site.favicon} />
-      <Header> </Header>
+      <Header> 
+        <link rel="preconnect" href="https://app.snipcart.com" />
+        <link rel="preconnect" href="https://cdn.snipcart.com" />
+        <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.css" />
+        <script async src="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.js" />
+        <script src="https://apis.google.com/js/api.js" />
+
+      </Header>
+      <div hidden id="snipcart" data-api-key={process.env.SNIPCART_TOKEN} />
       <article>
         <PostHeader
           title={post.title}
@@ -43,6 +51,7 @@ export default function Post({ data: { site, post, morePosts } }) {
       </article>
       <SectionSeparator />
       {morePosts.nodes.length > 0 && <MoreStories posts={morePosts.nodes} />}
+      
     </Container>
   );
 }

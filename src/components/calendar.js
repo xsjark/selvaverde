@@ -3,8 +3,9 @@ import moment from 'moment'
 import React, { useState, useEffect }  from "react";
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { useStaticQuery, graphql } from 'gatsby' 
-import events from './events';
-import  Snipcart  from "gatsby-plugin-snipcartv3";
+import {Buffer} from 'buffer';
+
+/* global Snipcart:false */
 
 const localizer = momentLocalizer(moment)
 
@@ -31,24 +32,13 @@ const MyCalendar = props => {
   }
   
   `)
-  var reformatPersons = function(eventlist) {
-    return eventlist.map(function(eventlist) {
-      // create a new object to store full name.
-      var newObj = {};
-      newObj["title"] = eventlist.node.description;
-      newObj["startDate"] = new Date(eventlist.node.start.dateTime);
-      newObj["endDate"] = new Date(eventlist.node.end.dateTime);
-      newObj["allDay"] = true;
   
-      // return our new object.
-      return newObj;
-    });
-  };
 
   const [date, setDate] = useState(null)
 
+
   const add_date = async ({start,end,resourceId}) => {
-    var persons = reformatPersons(data.allCalendarEvent.edges);
+    var persons = snipcartProductObject;
     
     // Find if the array contains an object by comparing the property value
     if (persons.some(e => e.startDate.toISOString() == start.toISOString())) {
@@ -64,6 +54,56 @@ const MyCalendar = props => {
     }
   }
 
+  useEffect(() => {
+    if (window.Snipcart) {
+      Snipcart.events.on("item.added", () => {
+        console.log("Item added")
+      })
+    }
+  });
+
+  const [eventTitle, setEventTitle] = useState("")
+  const [eventStart, setEventStart] = useState(null)
+ 
+  useEffect(() => {
+    if (window.Snipcart) {
+      Snipcart.events.on("cart.confirmed", () => {
+        setEventTitle(props.id)
+        setEventStart(date)
+        
+      })
+    }
+  });
+
+  const [snipcartProductObject, setSnipcartProductObject] = useState(0);
+  useEffect(() => {
+    async function loadData() {
+        const response = await fetch('https://app.snipcart.com/api/products/', {
+            headers: {
+                'Authorization': `Basic ${btoa('ST_NjE4OTlmODgtZmVhNy00NjAwLWE0MzAtZWI4NzRiZjhjYmEwNjM3NzMzNzMyMjcyMDkxMjQx')}`,
+                'Accept': 'application/json'
+            }})
+
+        const posts = await response.json();
+        setSnipcartProductObject(reformatEventObject(posts.items));
+    }
+
+    loadData();
+}, []);
+
+const reformatEventObject =  (eventlist) => {
+  return eventlist.map(function(eventlist) {
+    // create a new object to store full name.
+    var newObj = {};
+    newObj["title"] = eventlist.userDefinedId;
+    newObj["startDate"] = new Date(eventlist.description);
+    newObj["endDate"] = new Date(eventlist.description);
+    newObj["allDay"] = true;
+
+    // return our new object.
+    return newObj;
+  });
+};
 
   return(
   <div>
@@ -72,12 +112,14 @@ const MyCalendar = props => {
       startAccessor="startDate"
       endAccessor="endDate"
       style={{ height: 500 }}
-      events={reformatPersons(data.allCalendarEvent.edges)}
+      events={snipcartProductObject}
       onSelectSlot={add_date}   
       selectable={true}
       drilldownView={false}
     />
-    
+    <p>{eventTitle + " " + eventStart}</p>
+    <p>snipcartEventsObject: {JSON.stringify(snipcartProductObject)}</p>
+    <p>snipcartProductObject: {JSON.stringify(snipcartProductObject)}</p>
       {
         date !==  null ?
         <div className="max-w-2xl mx-auto flex justify-center">
