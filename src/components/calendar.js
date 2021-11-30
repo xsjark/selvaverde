@@ -41,7 +41,7 @@ const MyCalendar = props => {
     var persons = snipcartProductObject;
     
     // Find if the array contains an object by comparing the property value
-    if (persons.some(e => e.startDate.toISOString() == start.toISOString())) {
+    if (persons.some(e => e.startDate.getDate() === start.getDate())) {
         alert("Sorry, we're booked out on this day.");
     } 
     else if ( new Date(new Date().setDate(new Date().getDate()+1)).toISOString() >= start.toISOString()){
@@ -75,7 +75,7 @@ const MyCalendar = props => {
     }
   });
 
-  const [snipcartProductObject, setSnipcartProductObject] = useState(0);
+  const [snipcartProductObject, setSnipcartProductObject] = useState(null);
   useEffect(() => {
     async function loadData() {
         const response = await fetch('https://app.snipcart.com/api/products/', {
@@ -114,7 +114,7 @@ const reformatEventObject =  (eventlist) => {
       style={{ height: 500 }}
       events={snipcartProductObject}
       onSelectSlot={add_date}   
-      selectable={true}
+      selectable='ignoreEvents'
       drilldownView={false}
     />
       {
