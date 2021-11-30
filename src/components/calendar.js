@@ -117,9 +117,6 @@ const reformatEventObject =  (eventlist) => {
       selectable={true}
       drilldownView={false}
     />
-    <p>{eventTitle + " " + eventStart}</p>
-    <p>snipcartEventsObject: {JSON.stringify(snipcartProductObject)}</p>
-    <p>snipcartProductObject: {JSON.stringify(snipcartProductObject)}</p>
       {
         date !==  null ?
         <div className="max-w-2xl mx-auto flex justify-center">
