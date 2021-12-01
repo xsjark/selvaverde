@@ -41,7 +41,7 @@ const MyCalendar = props => {
     var persons = snipcartProductObject;
     
     // Find if the array contains an object by comparing the property value
-    if (persons.some(e => e.startDate.getDate() === start.getDate())) {
+    if (persons.some(e => e.startDate.getTime() === start.getTime())) {
         alert("Sorry, we're booked out on this day.");
     } 
     else if ( new Date(new Date().setDate(new Date().getDate()+1)).toISOString() >= start.toISOString()){
