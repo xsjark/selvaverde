@@ -95,7 +95,7 @@ const reformatEventObject =  (eventlist) => {
   return eventlist.map(function(eventlist) {
     // create a new object to store full name.
     var newObj = {};
-    newObj["title"] = eventlist.userDefinedId;
+    newObj["title"] = eventlist.userDefinedId + eventlist.description;
     newObj["startDate"] = new Date(eventlist.description);
     newObj["endDate"] = new Date(eventlist.description);
     newObj["allDay"] = true;
@@ -124,7 +124,7 @@ const reformatEventObject =  (eventlist) => {
         <button class="snipcart-add-item bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
           data-item-id={props.id}
           data-item-price={props.price}
-          data-item-url={"https://selvaverdetours.gatsbyjs.io/posts/" + props.slug + "/#"} 
+          data-item-url={"https://selvaverdetours.gatsbyjs.io/posts/" + props.slug} 
           data-item-description={date}
           data-item-image={props.coverImage?.gatsbyImageData}
           data-item-name={props.id}
