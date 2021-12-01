@@ -41,7 +41,7 @@ const MyCalendar = props => {
     var persons = snipcartProductObject;
     
     // Find if the array contains an object by comparing the property value
-    if (persons.some(e => e.startDate.getTime() === start.getTime())) {
+    if (persons.some(e => e.startDate.getDate() === start.getDate())) {
         alert("Sorry, we're booked out on this day.");
     } 
     else if ( new Date(new Date().setDate(new Date().getDate()+1)).toISOString() >= start.toISOString()){
@@ -75,10 +75,10 @@ const MyCalendar = props => {
     }
   });
 
-  const [snipcartProductObject, setSnipcartProductObject] = useState(null);
+  const [snipcartProductObject, setSnipcartProductObject] = useState([]);
   useEffect(() => {
     async function loadData() {
-        const response = await fetch('https://app.snipcart.com/api/products/', {
+        const response = await fetch('https://app.snipcart.com/api/orders/', {
             headers: {
                 'Authorization': `Basic ${btoa('ST_NjE4OTlmODgtZmVhNy00NjAwLWE0MzAtZWI4NzRiZjhjYmEwNjM3NzMzNzMyMjcyMDkxMjQx')}`,
                 'Accept': 'application/json'
@@ -95,9 +95,9 @@ const reformatEventObject =  (eventlist) => {
   return eventlist.map(function(eventlist) {
     // create a new object to store full name.
     var newObj = {};
-    newObj["title"] = eventlist.userDefinedId + eventlist.description;
-    newObj["startDate"] = new Date(eventlist.description);
-    newObj["endDate"] = new Date(eventlist.description);
+    newObj["title"] = (eventlist.items[0].name); // !! ONLY CHECKS ONE ITEM IN ORDER
+    newObj["startDate"] = new Date(eventlist.items[0].description);
+    newObj["endDate"] = new Date(eventlist.items[0].description);
     newObj["allDay"] = true;
 
     // return our new object.
