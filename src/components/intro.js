@@ -8,7 +8,7 @@ export default function Intro() {
   <div class="w-1/4 h-48">
     <img className="object-contain h-48 w-48" src={logo} alt="Logo" />
   </div>
-  <span class="w-3/4 h-24 self-center">
+  <span class="w-3/4 self-center ">
     <h1 className="text-4xl md:text-7xl font-bold tracking-tighter leading-tight md:pr-8 ">
         Selva Verde
     </h1>
