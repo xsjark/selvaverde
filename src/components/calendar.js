@@ -70,8 +70,6 @@
 };
    return(
    <div>
-     <p>{snipcartProductObject.length}</p>
-     <p>{JSON.stringify(snipcartProductObject)}</p>
      <Calendar
        localizer={localizer}
        startAccessor="startDate"
