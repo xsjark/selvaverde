@@ -11,28 +11,7 @@
  const localizer = momentLocalizer(moment)
  
  const MyCalendar = props => {
-   const data = useStaticQuery(graphql`
-   query MyQuery {
-     calendarEvent {
-       id
-     }
-     allCalendarEvent {
-       edges {
-         node {
-           id
-           description
-           start {
-             dateTime(formatString: "")
-           }
-           end {
-             dateTime(formatString: "")
-           }
-         }
-       }
-     }
-   }
    
-   `)
    
  
    const [date, setDate] = useState(null)
@@ -42,7 +21,7 @@
      var persons = snipcartProductObject;
      
      // Find if the array contains an object by comparing the property value
-     if (persons.some(e => e.startDate.getDate() === start.getDate())) {
+     if (persons.some(e => e.startDate.toDateString() === start.toDateString())) {
          alert("Sorry, we're booked out on this day.");
      } 
      else if ( new Date(new Date().setDate(new Date().getDate()+1)).toISOString() >= start.toISOString()){
@@ -55,26 +34,6 @@
      }
    }
  
-   useEffect(() => {
-     if (window.Snipcart) {
-       Snipcart.events.on("item.added", () => {
-         console.log("Item added")
-       })
-     }
-   });
- 
-   const [eventTitle, setEventTitle] = useState("")
-   const [eventStart, setEventStart] = useState(null)
-  
-   useEffect(() => {
-     if (window.Snipcart) {
-       Snipcart.events.on("cart.confirmed", () => {
-         setEventTitle(props.id)
-         setEventStart(date)
-         
-       })
-     }
-   });
  
    const [snipcartProductObject, setSnipcartProductObject] = useState([]);
    useEffect(() => {
@@ -90,29 +49,15 @@
      }
  
      loadData();
- }, []);
- 
-//  const reformatEventObject =  (eventlist) => {
-//    return eventlist.map(function(eventlist) {
-//      // create a new object to store full name.
-//      var newObj = {};
-//      newObj["title"] = (eventlist.items[0].name); // !! ONLY CHECKS ONE ITEM IN ORDER
-//      newObj["startDate"] = new Date(eventlist.items[0].description);
-//      newObj["endDate"] = new Date(eventlist.items[0].description);
-//      newObj["allDay"] = true;
- 
-//      // return our new object.
-//      return newObj;
-//    });
-//  };
+ });
 
  const reformatEventObject =  (eventlist) => {
-  return eventlist.map(function(eventlist) {
+  return eventlist.map(function(e) {
     // create a new object to store full name.
     let newarr=[]
-    var newObj = {};
-    eventlist.items.forEach(item => {
-      newObj["title"] = (item.name); // !! CHECKS ALL BUT NO CLICK
+    e.items.forEach(item => {
+      let newObj = {};
+      newObj["title"] = (item.name); // !! KIND OF WORKS JUST COPIES THE SAME ONE
       newObj["startDate"] = new Date(item.description);
       newObj["endDate"] = new Date(item.description);
       newObj["allDay"] = true;
@@ -125,6 +70,8 @@
 };
    return(
    <div>
+     <p>{snipcartProductObject.length}</p>
+     <p>{JSON.stringify(snipcartProductObject)}</p>
      <Calendar
        localizer={localizer}
        startAccessor="startDate"
