@@ -88,4 +88,20 @@ export default [
       'end': new Date(2015, 3, 22, 2, 0, 0)
     }
   ]
+  const reformatEventObject =  (eventlist) => {
+    return eventlist.map(function(eventlist) {
+      // create a new object to store full name.
+      let newarr=[]
+      var newObj = {};
+      eventlist.items.forEach(item => {
+        newObj["title"] = (item.name); // !! ONLY CHECKS ONE ITEM IN ORDER
+        newObj["startDate"] = new Date(item.description);
+        newObj["endDate"] = new Date(item.description);
+        newObj["allDay"] = true;
   
+        // return our new object.
+        newarr.push(newObj)
+      }) 
+      return newarr
+    });
+  };
