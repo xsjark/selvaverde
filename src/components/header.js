@@ -7,7 +7,6 @@ export default function Header() {
       <Link to="/" className="hover:underline">
         Selva Verde
       </Link>
-      .
     </h2>
   )
 }

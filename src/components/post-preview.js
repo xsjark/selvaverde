@@ -11,6 +11,7 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
+  price
 }) {
   return (
     <div>
@@ -22,10 +23,14 @@ export default function PostPreview({
           {title}
         </Link>
       </h3>
-      <div className="text-lg mb-4">
+      <div>
+      <p className="text-lg leading-relaxed mb-4 inline font-bold"> Price: </p>
+      <p className="text-lg leading-relaxed mb-4 inline">${price} per person (min. 2)</p>
       </div>
+      <div>
       <p className="text-lg leading-relaxed mb-4 inline font-bold"> Description: </p>
       <p className="text-lg leading-relaxed mb-4 inline">{excerpt}</p>
+      </div>  
     </div>
   );
 }

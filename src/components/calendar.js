@@ -83,7 +83,7 @@
        {
          date !==  null ?
          <div className="max-w-2xl mx-auto flex justify-center">
-         <div className="mb-6 text-lg">
+         <div className="mb-2 text-lg">
          <button class="snipcart-add-item bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
            data-item-id={props.id}
            data-item-price={props.price}
@@ -100,7 +100,7 @@
        </div>
        : date ==  null && 
          <div className="max-w-2xl mx-auto flex justify-center">
-         <div className="mb-6 text-lg">
+         <div className="mb-2 text-lg">
          <button disabled class=" disabled:opacity-50 snipcart-add-item bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
            data-item-id={props.id}
            data-item-price={props.price}

@@ -11,6 +11,7 @@ export default function HeroPost({
   excerpt,
   author,
   slug,
+  price,
 }) {
   return (
     <section>
@@ -24,6 +25,7 @@ export default function HeroPost({
               {title}
             </Link>
           </h3>
+          <h3 className="mb-4 text-xl lg:text-xl leading-tight">From ${price} for minimum 2 persons</h3>
           <div className="mb-4 md:mb-0 text-lg">
           </div>
         </div>
