@@ -15,22 +15,20 @@ export default function PostPreview({
 }) {
   return (
     <div>
-      <div className="mb-5">
-        <CoverImage slug={slug} title={title} fluid={coverImage.small} />
-      </div>
-      <h3 className="text-3xl mb-3 leading-snug">
+
+      <div className="max-w-none p-6 rounded-md shadow-md bg-coolGray-50 text-coolGray-900">
+	<CoverImage slug={slug} title={title} fluid={coverImage.small} className="object-cover object-center w-full rounded-md h-72 bg-coolGray-500" />
+	<div className="mt-6 mb-2">
+		<span className="block text-xs font-medium tracking-widest uppercase text-violet-600">${price} per person (min. 2)</span>
+		  <h2 className="text-xl font-semibold tracking-wide">
         <Link to={`/posts/${slug}`} className="hover:underline">
           {title}
         </Link>
-      </h3>
-      <div>
-      <p className="text-lg leading-relaxed mb-4 inline font-bold"> Price: </p>
-      <p className="text-lg leading-relaxed mb-4 inline">${price} per person (min. 2)</p>
-      </div>
-      <div>
-      <p className="text-lg leading-relaxed mb-4 inline font-bold"> Description: </p>
-      <p className="text-lg leading-relaxed mb-4 inline">{excerpt}</p>
-      </div>  
+      </h2>
+	</div>
+	<p className="text-coolGray-800">{excerpt}</p>
+</div>
+
     </div>
   );
 }
