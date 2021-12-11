@@ -4,9 +4,8 @@ import Separator from '../components/section-separator'
 function Recommended() {
     return (
         <section className="p-6 bg-coolGray-100 text-coolGray-800">
-            <Separator />
 	        <div className="container p-4 mx-auto text-center">
-		        <h2 className="text-4xl font-bold">Highly recommended by</h2>
+		        <h2 className="text-4xl font-bold">Highly recommended on</h2>
 	        </div>
 
 	        <div className="container flex flex-wrap justify-between mx-auto text-coolGray-600">

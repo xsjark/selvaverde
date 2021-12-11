@@ -15,7 +15,7 @@ export default function Post({ data: { site, post, morePosts } }) {
   
   return (
     <Container>
-      <div class="snipcart-summary"style={{float: "right", marginTop: -10}}>
+      <div class="snipcart-summary"style={{right: 0, marginRight: 10, marginTop: -10, position: "fixed"}}>
       <button class=" snipcart-summary snipcart-checkout pull-right inline-flex items-center justify-center w-50 h-10 mr-2 text-gray-700" >
         <span class="relative inline-block">
         <ShoppingBagIcon className="h-7 w-7 text-gray-500"/>
