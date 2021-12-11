@@ -79,7 +79,7 @@
        onSelectSlot={add_date}   
        selectable='ignoreEvents'
        drilldownView={false}
-     />
+       views={['month']}     />
        {
          date !==  null ?
          <div className="max-w-2xl mx-auto flex justify-center">
