@@ -10,11 +10,13 @@ export default function CoverImage({ title, fluid, slug }) {
       alt={`Cover Image for ${title}`}
       className={cn("shadow-small", {
         "hover:shadow-medium transition-shadow duration-200": slug,
-      })}
+      }),
+      "object-contain w-full h-64 rounded sm:h-96  bg-coolGray-500"
+    }
     />
   );
   return (
-    <div className="-mx-5 sm:mx-0">
+    <div className="sm:mx-0 w-full col-span-7">
       {slug ? (
         <Link to={`/posts/${slug}`} aria-label={title}>
           {image}

@@ -14,25 +14,21 @@ export default function HeroPost({
   price,
 }) {
   return (
-    <section>
-      <div className="mb-8 md:mb-16">
-        <CoverImage title={title} fluid={coverImage.large} slug={slug} />
-      </div>
-      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
-        <div>
-          <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
-            <Link to={`/posts/${slug}`} className="hover:underline">
-              {title}
-            </Link>
-          </h3>
-          <h3 className="mb-4 text-xl lg:text-xl leading-tight">From ${price} for minimum 2 persons</h3>
-          <div className="mb-4 md:mb-0 text-lg">
-          </div>
+        <section className="bg-coolGray-100 text-coolGray-800 my-10">
+        <div className="container max-w-6xl space-y-3 sm:space-y-12">
+        <Link to={`/posts/${slug}`} className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 bg-coolGray-50">
+          <CoverImage title={title} fluid={coverImage.large} slug={slug} />
+            <div className="p-6 space-y-10 lg:col-span-5">
+            <span className="block text-xs font-medium tracking-widest uppercase text-violet-600">
+            ${price} per person (min. 2)
+          </span>
+              <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">{title}</h3>
+              <p>{excerpt}</p>
+            </div>
+          </Link>
         </div>
-        <div>
-          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-        </div>
-      </div>
-    </section>
+      </section>
+      
+      
   );
 }
