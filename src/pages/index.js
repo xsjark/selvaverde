@@ -3,6 +3,8 @@ import Container from "../components/container";
 import HeroPost from "../components/hero-post";
 import Intro from "../components/intro";
 import Footer from "../components/footer";
+import Recommended from "../components/recommended";
+import Testimonials from "../components/testimonials";
 import MoreStories from "../components/more-stories";
 import { HelmetDatoCms } from "gatsby-source-datocms";
 import { graphql } from "gatsby";
@@ -37,6 +39,8 @@ export default function Index({ data: { allPosts, site, blog } }) {
         />
       )}
       {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+      <Testimonials />
+      <Recommended />
       <Footer />
     </Container>
   );
