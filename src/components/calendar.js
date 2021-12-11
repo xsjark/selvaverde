@@ -79,7 +79,27 @@
        onSelectSlot={add_date}   
        selectable='ignoreEvents'
        drilldownView={false}
-       views={['month']}     />
+       views={['month']}     
+       eventPropGetter={
+        (event, start, end, isSelected) => {
+          let newStyle = {
+            backgroundColor: "lightgrey",
+            color: 'black',
+            borderRadius: "0px",
+            border: "none"
+          };
+    
+          if (event.isMine){
+            newStyle.backgroundColor = "lightgreen"
+          }
+    
+          return {
+            className: "",
+            style: newStyle
+          };
+        }
+      }
+       />
        {
          date !==  null ?
          <div className="max-w-2xl mx-auto flex justify-center">
