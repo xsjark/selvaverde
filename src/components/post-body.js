@@ -13,17 +13,17 @@ useEffect(() => {
             headers: {
                 'Authorization': `Basic ${btoa('ST_NjE4OTlmODgtZmVhNy00NjAwLWE0MzAtZWI4NzRiZjhjYmEwNjM3NzMzNzMyMjcyMDkxMjQx')}`,
                 'Accept': 'application/json'
-            }})
-
+            }
+          })
         const posts = await response.json();
         setStock(JSON.stringify(posts.stock));
         setSales(JSON.stringify(posts.statistics.numberOfSales));
-    }
+        }
+        loadData();
+        }, []);
 
-    loadData();
-}, []);
     return (
-    <div className="max-w-2xl mx-auto">
+    <div className="w-full sm:max-w-lg mx-auto">
       <div className="prose prose-lg prose-blue">
         <StructuredText
           data={content}

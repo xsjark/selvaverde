@@ -9,7 +9,7 @@ export default function PostHeader({ title, coverImage, date, price }) {
       <PostTitle>{title}</PostTitle>
       <div className="hidden md:block md:mb-12">
       </div>
-      <div className="mb-8 md:mb-16 -mx-5 sm:mx-0">
+      <div className="z-0 w-full h-60 sm:h-96 bg-coolGray-500">
         <CoverImage title={title} fluid={coverImage?.gatsbyImageData} />
       </div>
       
