@@ -40,7 +40,7 @@ export default function Post({ data: { site, post, morePosts } }) {
           <div className="p-5 mx-auto sm:p-10 bg-coolGray-100 text-coolGray-800">
 	<div className="flex flex-col max-w-4xl mx-auto overflow-wrap rounded">
   <CoverImage title={post.title} fluid={post.coverImage?.gatsbyImageData} className=" w-full h-60 sm:h-96 bg-coolGray-500"/>
-		<div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 w-5/6 mx-5 rounded bg-white z-20">
+		<div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 w-5/6 m:w-full mx-2 rounded bg-white z-20">
 			<div className="space-y-2 ">
 				<p className="inline-block text-2xl font-semibold sm:text-xl">{post.title}</p>
 			</div>

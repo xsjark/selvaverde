@@ -16,14 +16,14 @@ function Testimonials() {
 					<path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
 					<path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
 				</svg>
-				<p className="px-6 py-1 text-lg italic">My business, Senior Travel Companion Serviecs, LLC, involves taking seniors and disabled individuals on trips. I brought Elizabeth to Ecuador and the Galapagos to experience the flora and fauna she craved. Our tour guide, Latin America for All, arranged a rafting trip with AquaExtreme and it was the highlight of our trip! Danny and Giovanni strapped Elizabeth's chair to the raft, gave her a paddle, and we spent the afternoon safely navigating easy and class 3 rapids and enjoying the beautiful Napo river. The shore lunch was terrific as well. In the safety kayak, Giovanni entertained us with tricks and in our raft, while Danny identified what we were seeing, as well as comfortably guiding us down the river. Elizabeth is unable to walk on her own, but on that special day, she had the adventure of a lifetime!</p>
+				<p className="px-6 py-1 text-lg italic"> I had my first rafting experience with AquaXtreme on the Jatun Yacu river, and it was absolutely amazing! Our guides were skilled and professional, but they were also a lot of fun. We experienced many class III and III+ rapids over the course of our journey, and the river conditions couldn't have been better. The guides got great action pictures, and even prepared a nice lunch for us afterward. Absolutely fantastic experience! [Visited May 2016]</p>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="opacity-30 absolute -bottom-1 -right-1 w-8 h-8 text-coolGray-300">
 					<path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
 					<path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
 				</svg>
 			</div>
 			<span className="w-12 h-1 my-2 rounded-lg bg-violet-600"></span>
-			<p>Carol G. on Tripadvisor</p>
+			<p>Shane7770</p>
 		</div>
 		<div className="flex flex-col items-center max-w-lg mx-12 lg:mx-0">
 			<div className="relative text-center">
@@ -31,18 +31,14 @@ function Testimonials() {
 					<path fill="currentColor" d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
 					<path fill="currentColor" d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
 				</svg>
-				<p className="px-6 py-1 text-lg italic">Our guides were Daniel and Dannie. They were both terrific, with Daniel leading the charge, speaking I’m both English and Spanish so all could understand. They catered to our needs and did the trip early as we had to get back to town by one. I’m the first set of caves used for traditional ceremonies we saw bats, fish and sparkling minerals. There was water. So don’t expect to stay dry or clean. just be aware there’s were some tight spaces ( don’t take backpacks)and a fairly steep accent at the end.
-Then we walked through the jungle, saw some inter rock features and walked through a rock maze. There we also some rocks that were used as tables to create bush medicine.
-We ended with another cave which had a lot of water in it and was lots of fun as well as challenging. The guides were very encouraging.
-A great way to spend the morning.
-Thank you for an unforgettable experience.</p>
+				<p className="px-6 py-1 text-lg italic">The best rafting tour we ever made. We were traveling with 3 people, and the tour was the 3 of us only in a little boat. We are experienced paddlers and were rafting in New Zealand, Colombia, Austria etc. this was top notch. The guide Amaru was professional and experienced with the river. We had 4 hours of pure rafting. The tour in total took us 6-7 hours. Lunch prepared by the 2 guides (additional safety kayak) was very good. The landscape was fantastic and super remote, we met 5 other people the whole day. The trip as worth every cent.</p>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="opacity-30 absolute -bottom-1 -right-1 w-8 h-8 text-coolGray-300">
 					<path fill="currentColor" d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
 					<path fill="currentColor" d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
 				</svg>
 			</div>
 			<span className="w-12 h-1 my-2 rounded-lg bg-violet-600"></span>
-			<p>Merlene on Tripadvisor</p>
+			<p>Tillitos Stuttgart, Germany</p>
 		</div>
 	</div>
 </section>

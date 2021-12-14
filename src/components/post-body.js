@@ -23,7 +23,7 @@ useEffect(() => {
         }, []);
 
     return (
-    <div className="w-full sm:max-w-lg mx-auto">
+    <div className="w-full sm:w-full mx-auto">
       <div className="prose prose-lg prose-blue">
         <StructuredText
           data={content}
