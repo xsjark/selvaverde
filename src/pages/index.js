@@ -10,6 +10,7 @@ import { HelmetDatoCms } from "gatsby-source-datocms";
 import { graphql } from "gatsby";
 import { ShoppingBagIcon } from '@heroicons/react/solid'
 import logo from "../assets/logo.jpg" 
+import { Link } from "gatsby";
 
 export default function Index({ data: { allPosts, site, blog } }) {
   const heroPost = allPosts.nodes[0];
@@ -29,15 +30,17 @@ export default function Index({ data: { allPosts, site, blog } }) {
         </span>
           </a>
           <ul className="items-stretch hidden space-x-3 md:flex">
-            <li className="flex">
-              <a href="#" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Tours</a>
+            {/* <li className="flex">
+            <Link to={`/#MoreStories`} className="hover:underline flex items-center px-4 -mb-1 border-b-2 border-transparent">
+              Tours
+            </Link>
             </li>
             <li className="flex">
               <a href="#" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Testimonials</a>
             </li>
             <li className="flex">
               <a href="#" className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-violet-600 border-violet-600">Contact</a>
-            </li>
+            </li> */}
             <li className="flex snipcart-summary">
               <a href="#" className="flex snipcart-checkout items-center px-4 -mb-1 border-b-2 border-transparent">
               <ShoppingBagIcon className="h-7 w-7 text-gray-500"/>
@@ -64,7 +67,7 @@ export default function Index({ data: { allPosts, site, blog } }) {
           price={heroPost.price}
         />
       )}
-      {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+      {morePosts.length > 0 && <MoreStories id="MoreStories" posts={morePosts} />}
       <Testimonials />
       <Recommended />
       <Footer />

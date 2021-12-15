@@ -32,7 +32,7 @@ export default function Post({ data: { site, post, morePosts } }) {
         </span>
           </a>
           <ul className="items-stretch hidden space-x-3 md:flex">
-            <li className="flex">
+            {/* <li className="flex">
               <a href="#" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Tours</a>
             </li>
             <li className="flex">
@@ -40,7 +40,7 @@ export default function Post({ data: { site, post, morePosts } }) {
             </li>
             <li className="flex">
               <a href="#" className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-violet-600 border-violet-600">Contact</a>
-            </li>
+            </li> */}
             <li className="flex snipcart-summary">
               <a href="#" className="flex snipcart-checkout items-center px-4 -mb-1 border-b-2 border-transparent">
               <ShoppingBagIcon className="h-7 w-7 text-gray-500"/>

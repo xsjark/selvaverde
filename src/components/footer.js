@@ -36,17 +36,11 @@ export default function Footer() {
 				<h3 className="tracking-wide uppercase text-coolGray-900">Contact</h3>
 				<ul className="space-y-1">
 					<li>
-						<p>+593 998215710</p>
-					</li>
-          <li>
-						<p>+593 998215710</p>
+						<p>+593 991803802</p>
 					</li>
 					<li>
-						<p>info.selvaverdetours@gmail.com</p>
+						<p>selvaverdetours@gmail.com</p>
 					</li>
-          <li>
-            <p>selvaverde_sa@yahoo.com</p>
-          </li>
 				</ul>
 			</div>
 			<div className="space-y-3">
