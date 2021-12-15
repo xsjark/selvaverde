@@ -11,7 +11,8 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
-  price
+  price,
+  minimum
 }) {
   return (
     <div>
@@ -24,7 +25,7 @@ export default function PostPreview({
         />
 	      <div className="mt-6 mb-2">
 		      <span className="block text-xs font-medium tracking-widest uppercase text-violet-600">
-            ${price} per person (min. 2)
+            ${price} per person (min. {minimum})
           </span>
 		      <h2 className="text-xl font-semibold tracking-wide">
             <Link to={`/posts/${slug}`} className="hover:underline">

@@ -17,10 +17,10 @@ export default function Post({ data: { site, post, morePosts } }) {
   
   return (
     <Container>
-      <div class="snipcart-summary"style={{right: 0, marginRight: 10, marginTop: -10, position: "fixed"}}>
+      <div class="snipcart-summary" style={{right: 0, marginRight: 10, marginTop: -10, position: "absolute"}}>
       <button class=" snipcart-summary snipcart-checkout pull-right inline-flex items-center justify-center w-50 h-10 mr-2 text-gray-700" >
         <span class="relative inline-block">
-        <ShoppingBagIcon className="h-7 w-7 text-gray-500"/>
+        <ShoppingBagIcon className="h-7 w-7 text-gray-500 z-20"/>
          <span class="snipcart-total-items absolute top-0 right-0 inline-flex items-center justify-center px-1 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"></span>
         </span>    
       </button>
@@ -39,9 +39,9 @@ export default function Post({ data: { site, post, morePosts } }) {
       <article>
           <div className="p-5 mx-auto sm:p-10 bg-coolGray-100 text-coolGray-800">
 	<div className="flex flex-col max-w-4xl mx-auto overflow-wrap rounded">
-  <CoverImage title={post.title} fluid={post.coverImage?.gatsbyImageData} className=" w-full h-60 sm:h-96 bg-coolGray-500"/>
+  <CoverImage title={post.title} fluid={post.coverImage?.gatsbyImageData} className=" w-full h-60 sm:h-96 bg-coolGray-500 "/>
 		
-    <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 w-full md:w-5/6 mx-2 rounded bg-white z-20">
+    <div className="p-6 pb-12 m-4 mx-auto -mt-16 space-y-6 w-full md:w-5/6 mx-2 rounded bg-white z-10">
 			<div className="space-y-2 ">
 				<p className="inline-block text-2xl font-semibold sm:text-xl">{post.title}</p>
 			</div>
@@ -52,6 +52,7 @@ export default function Post({ data: { site, post, morePosts } }) {
           author={post.author}
           price={post.price}
           slug={post.slug}
+          minimum={post.minimum}
           />
 			</div>
 		</div>
@@ -91,6 +92,7 @@ export const query = graphql`
       }
       date
       price
+      minimum
       coverImage {
         gatsbyImageData(width: 1500)
       }
@@ -116,6 +118,7 @@ export const query = graphql`
         slug
         excerpt
         date
+        minimum
         coverImage {
           small: gatsbyImageData(width: 760)
         }

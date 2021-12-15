@@ -3,7 +3,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { StructuredText } from "react-datocms";
 import MyCalendar from "../components/calendar";
 
-export default function PostBody({ content, title, coverImage, date, price, slug }) {
+export default function PostBody({ content, title, coverImage, date, price, slug, minimum }) {
   const [stock, setStock] = useState(0);
     const [sales, setSales] = useState(0);
 
@@ -48,6 +48,7 @@ useEffect(() => {
         url={"https://selvaverdetours.gatsbyjs.io/posts/" + slug + "/#"} 
         quantity={2}
         slug={slug}
+        minimum={minimum}
       />
     </div>
   );

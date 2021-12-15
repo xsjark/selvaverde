@@ -111,7 +111,7 @@
            data-item-description={date}
            data-item-image={props.coverImage?.gatsbyImageData}
            data-item-name={props.id}
-           data-item-min-quantity={2}
+           data-item-min-quantity={props.minimum}
            style={{marginTop: 70}}
          >
            Reserve your spot for ${props.price} on {new Date(date).toDateString()}

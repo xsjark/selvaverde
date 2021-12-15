@@ -16,7 +16,7 @@ export default function Index({ data: { allPosts, site, blog } }) {
 
   return (
     <Container>
-      <div class="snipcart-summary"style={{right: 0, marginRight: 10, position: "fixed"}}>
+      <div class="snipcart-summary"style={{right: 0, marginRight: 10, position: "absolute"}}>
       <button class=" snipcart-summary snipcart-checkout pull-right inline-flex items-center justify-center w-50 h-10 mr-2 text-gray-700" >
         <span class="relative inline-block">
         <ShoppingBagIcon className="h-7 w-7 text-gray-500"/>
@@ -65,6 +65,7 @@ export const query = graphql`
         slug
         excerpt
         date
+        minimum
         coverImage {
           large: gatsbyImageData(width: 1500)
           small: gatsbyImageData(width: 760)

@@ -20,6 +20,7 @@ export default function MoreStories({ posts }) {
             slug={post.slug}
             excerpt={post.excerpt}
             price={post.price}
+            minimum={post.minimum}
           />
         ))}
       </div>

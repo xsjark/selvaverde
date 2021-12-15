@@ -11,7 +11,7 @@ export default function CoverImage({ title, fluid, slug }) {
       className={cn("shadow-small", {
         "hover:shadow-medium transition-shadow duration-200": slug,
       }),
-      "object-contain w-full h-64 sm:h-96 bg-coolGray-500"
+      "object-contain w-full h-64 sm:h-96 bg-coolGray-500 z-2"
     }
     />
   );
