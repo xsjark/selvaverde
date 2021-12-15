@@ -8,6 +8,8 @@ import PostHeader from "../../components/post-header";
 import SectionSeparator from "../../components/section-separator";
 import Footer from "../../components/footer";
 import CoverImage from "../../components/cover-image";
+import logo from "../../assets/logo.jpg" 
+import { Link } from 'gatsby'
 
 import { HelmetDatoCms } from "gatsby-source-datocms";
 import { ShoppingBagIcon } from '@heroicons/react/solid'
@@ -17,14 +19,41 @@ export default function Post({ data: { site, post, morePosts } }) {
   
   return (
     <Container>
-      <div class="snipcart-summary" style={{right: 0, marginRight: 10, marginTop: -10, position: "absolute"}}>
-      <button class=" snipcart-summary snipcart-checkout pull-right inline-flex items-center justify-center w-50 h-10 mr-2 text-gray-700" >
-        <span class="relative inline-block">
-        <ShoppingBagIcon className="h-7 w-7 text-gray-500 z-20"/>
-         <span class="snipcart-total-items absolute top-0 right-0 inline-flex items-center justify-center px-1 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"></span>
-        </span>    
-      </button>
-    </div>
+      <header className="p-4 bg-coolGray-100 text-coolGray-800">
+        <div className="container flex justify-between h-16 mx-auto">
+          <a href="#" aria-label="Back to homepage" className="flex items-center p-2">
+          <img className="object-contain w-20 h-18" src={logo} alt="Logo" />
+          <span className="w-3/4 self-center ">
+          <Link to="/" className="hover:underline">
+          <h1 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-5 mt-5">
+              Selva Verde
+          </h1>
+          </Link>
+        </span>
+          </a>
+          <ul className="items-stretch hidden space-x-3 md:flex">
+            <li className="flex">
+              <a href="#" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Tours</a>
+            </li>
+            <li className="flex">
+              <a href="#" className="flex items-center px-4 -mb-1 border-b-2 border-transparent">Testimonials</a>
+            </li>
+            <li className="flex">
+              <a href="#" className="flex items-center px-4 -mb-1 border-b-2 border-transparent text-violet-600 border-violet-600">Contact</a>
+            </li>
+            <li className="flex snipcart-summary">
+              <a href="#" className="flex snipcart-checkout items-center px-4 -mb-1 border-b-2 border-transparent">
+              <ShoppingBagIcon className="h-7 w-7 text-gray-500"/>
+              </a>
+            </li>
+          </ul>
+          <button className="flex justify-end p-4 md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
       <HelmetDatoCms seo={post.seo} favicon={site.favicon} />
       <Header> 
         <link rel="preconnect" href="https://app.snipcart.com" />
