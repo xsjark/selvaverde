@@ -23,7 +23,7 @@ export default function PostPreview({
           fluid={coverImage.small} 
           className="object-cover object-center w-full rounded-md h-72 bg-coolGray-500" 
         />
-	      <div className="mt-6 mb-2">
+	      <div className="mt-6 mb-2 min-h-400">
 		      <span className="block text-xs font-medium tracking-widest uppercase text-violet-600">
             ${price} per person (min. {minimum})
           </span>
