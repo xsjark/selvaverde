@@ -9,8 +9,8 @@ function Testimonials() {
 	<div className="container mx-auto flex flex-col items-center pb-6 mb-4 md:p-10 md:px-12">
 		<h1 className="text-4xl font-semibold leading-none text-center">What our clients have to say</h1>
 	</div>
-	<div className="container mx-auto grid grid-cols-1 gap-8 lg:gap-20 md:px-10 md:pb-10 lg:grid-cols-2">
-		<div className="flex flex-col items-center mx-12 lg:mx-0">
+	<div className="container mx-auto grid grid-cols-2 gap-8 lg:gap-20 md:px-10 md:pb-10 lg:grid-cols-2">
+		<div className="flex flex-col items-center mx-12 md:mx-auto">
 			<div className="relative text-center">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="opacity-30 absolute -top-1 -left-1 w-8 h-8 text-neutral-50">
 					<path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
@@ -25,7 +25,7 @@ function Testimonials() {
 			<span className="w-12 h-1 my-2 rounded-lg bg-violet-600"></span>
 			<p>Shane7770</p>
 		</div>
-		<div className="flex flex-col items-center max-w-lg mx-12 lg:mx-0">
+		<div className="flex flex-col items-center max-w-lg mx-12 md:mx-auto">
 			<div className="relative text-center">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="opacity-30 absolute -top-1 -left-1 w-8 h-8 text-coolGray-300">
 					<path fill="currentColor" d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>

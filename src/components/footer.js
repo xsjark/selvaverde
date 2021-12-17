@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="px-4 divide-y bg-coolGray-100 text-coolGray-800">
 	<div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-		<div className="lg:w-1/3">
+		<div className="lg:w-1/3 s:w-full">
 			<a href="#" className="flex justify-center space-x-3 lg:justify-start">
 				<div className="flex items-center justify-center w-12 h-12 rounded-full bg-violet-600">
         <img className="object-contain" src={logo} alt="Logo" />
@@ -43,7 +43,7 @@ export default function Footer() {
 					</li>
 				</ul>
 			</div>
-			<div className="space-y-3">
+			<div className="space-y-3 s:w-full">
 				<div className="uppercase text-coolGray-900">Social media</div>
 				<div className="flex justify-start space-x-3">
 					<a target="_blank" href="https://www.facebook.com/SelvaverdeTourOperadora" title="Facebook" className="flex items-center p-1">
