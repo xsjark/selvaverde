@@ -4,7 +4,7 @@ import PostPreview from '../components/post-preview'
 export default function MoreStories({ posts }) {
   return (
     <section>
-      <div className="container p-10 mx-auto text-center">
+      <div className="container p-5 mx-auto text-center">
       <h2 className="text-4xl font-bold ">
         Our tours
       </h2>
