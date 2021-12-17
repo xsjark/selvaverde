@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "../components/container";
+import Banner from "../components/banner";
 import HeroPost from "../components/hero-post";
 import Intro from "../components/intro";
 import Footer from "../components/footer";
@@ -62,7 +63,7 @@ export default function Index({ data: { allPosts, site, blog } }) {
       </header>
     
       <HelmetDatoCms seo={blog.seo} favicon={site.favicon} />
-      {heroPost && (
+      {/* {heroPost && (
         <HeroPost
           title={heroPost.title}
           coverImage={heroPost.coverImage}
@@ -72,7 +73,8 @@ export default function Index({ data: { allPosts, site, blog } }) {
           excerpt={heroPost.excerpt}
           price={heroPost.price}
         />
-      )}
+      )} */}
+      <Banner />
       {morePosts.length > 0 && <MoreStories id="MoreStories" posts={morePosts} />}
       <Testimonials />
       <Recommended />
